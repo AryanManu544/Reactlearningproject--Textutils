@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 //import About from './components/About' <About/>;
 import { useState } from 'react';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [mode,setmode] = useState("light")
