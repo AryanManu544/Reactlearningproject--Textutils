@@ -51,7 +51,7 @@ export default function Textform(props){
             <btn className="btn btn-primary mx-2" onClick = {handleLoclick} style= {{backgroundColor: props.mode === "dark"?"#fd7e14":"blue"}}>Convert to Lowercase</btn>
             <button type="submit" onClick={speak} className="btn btn-primary" style= {{backgroundColor: props.mode === "dark"?"#fd7e14":"blue"}}>Speak</button>
             <btn className="btn btn-primary mx-2" onClick = {title} style= {{backgroundColor: props.mode === "dark"?"#fd7e14":"blue"}}>Capitalize the words</btn>
-            <btn className="btn btn-primary mx-2" onClick = {handlecopy} style= {{backgroundColor: props.mode === "dark"?"#fd7e14":"blue"}}>Copy Text</btn>
+            <btn className="btn btn-primary" onClick = {handlecopy} style= {{backgroundColor: props.mode === "dark"?"#fd7e14":"blue"}}>Copy Text</btn>
             <btn className="btn btn-primary mx-2" onClick = {handleclear} style= {{backgroundColor: props.mode === "dark"?"#fd7e14":"blue"}}>Clear Text</btn>
 
         </div>
