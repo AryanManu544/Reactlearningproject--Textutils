@@ -22,6 +22,7 @@ function App() {
   <Navbar title = "TextUtils" aboutText = "About TextUtils" mode= {mode} togglemode= {togglemode}/>
   <div className='container my-3'>
   <Textform heading = "Enter text to analyze below" mode= {mode}/>
+  <Analytics/>
   </div>
     </>
   );
