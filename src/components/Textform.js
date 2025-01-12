@@ -6,6 +6,7 @@ export default function Textform(props){
     const handleUpclick = () => {
         let newtext = text.toUpperCase()
         setText(newtext)
+        props.showalert("Converted to uppercase",'success')
     }
     const handleonChange = (event) => {
         setText(event.target.value)
@@ -13,11 +14,13 @@ export default function Textform(props){
     const handleLoclick = () => {
         let newtext = text.toLowerCase()
         setText(newtext)
+        props.showalert("Converted to lowercase",'success')
     }
     const speak = () => {
         let msg = new SpeechSynthesisUtterance();
         msg.text = text;
         window.speechSynthesis.speak(msg);
+        props.showalert("Hear the text",'success')
     }
     const title = () => {
         let newText = text
@@ -25,20 +28,19 @@ export default function Textform(props){
             .map((el) => el.charAt(0).toUpperCase() + el.slice(1).toLowerCase())
             .join(" ");
         setText(newText)
+        props.showalert("Converted to title",'success')
     }
     const handlecopy = () =>{
         var text = document.getElementById("myBox")
         text.select()
         navigator.clipboard.writeText(text.value)
+        props.showalert("Copied to clipboard",'success')
     }
-    const handleclear = () =>{
-        var text = document.getElementById("myBox")
-        if (text) {
-            text.value = ""; 
-        } else {
-            console.error("Element with ID 'myBox' not found.");
-        }
-    }
+    const handleclear = () => {
+        setText(""); // Clears the text by updating the state
+        props.showalert("Cleared all the text", 'success');
+    };
+    
 
     return(
         <>
