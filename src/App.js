@@ -4,8 +4,8 @@ import Textform from './components/Textform';
 import About from './components/About';
 import Alert from './components/Alert';
 import { useState } from 'react';
-// import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 function App() {
 const toggleMode=()=>{
     if(mode==='dark'){
@@ -22,16 +22,16 @@ const toggleMode=()=>{
 const showalert=(message,type)=>{
 setalert({
     msg:message,
-    type:type,// type is in bootstrap
+    type:type
   });
- // Clear the alert after a certain period
- setTimeout(() => {
+
+  setTimeout(() => {
   setalert({});
 }, 2000);
 }
 
   const [alert, setalert] = useState({})
-  const [mode, setDarkMode]=useState('light'); // dark is enable or not
+  const [mode, setDarkMode]=useState('light'); 
   
   return (
   <>
