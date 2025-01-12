@@ -1,7 +1,8 @@
 // component file name 1st letter must be capital alwayss
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import lightIcon from '../assets/icons/light-icon.ico';
+import darkIcon from '../assets/icons/dark-icon.ico';
 
 export default function Navbar(props) {
   return (
@@ -19,12 +20,33 @@ export default function Navbar(props) {
             <Link className="nav-link" to="/about">About</Link>
           </li>
         </ul>
-        <div className={`form-check form-switch text-${props.mode==='dark'?'light':'dark'}`}>
-  <input className="form-check-input " onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable {props.mode==='dark'?'light':'dark'} mode</label>
+        <div className="form-check form-switch text-${props.mode === 'dark' ? 'light' : 'dark'}" style={{ position: 'relative' }}>
+              <input 
+                className="form-check-input" 
+                onClick={props.toggleMode} 
+                type="checkbox" 
+                role="switch" 
+                id="flexSwitchCheckDefault" 
+              />
+              <img 
+                src={props.mode === 'dark' ? darkIcon : lightIcon} 
+                alt="theme icon" 
+                style={{
+                  position: 'absolute', 
+                  top: '50%', 
+                  left: props.mode === 'dark' ? '75%' : '25%', // Inverse position of the icons
+                  transform: 'translate(-65%, -50%)', 
+                  width: '20px', 
+                  height: '20px',
+                  pointerEvents: 'none' // Prevents the icon from interfering with the toggle functionality
+                }}
+              />
+                
+
 </div>
       </div>
     </div>
-  </nav></div>
+  </nav>
+  </div>
   )
 }
